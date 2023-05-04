@@ -8,17 +8,63 @@
 
 /* Begin PBXBuildFile section */
 		4989E4BA29F1806900F4A2B2 /* Slot_MachineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989E4B929F1806900F4A2B2 /* Slot_MachineApp.swift */; };
-		4989E4BC29F1806900F4A2B2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989E4BB29F1806900F4A2B2 /* ContentView.swift */; };
 		4989E4BE29F1806C00F4A2B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4989E4BD29F1806C00F4A2B2 /* Assets.xcassets */; };
 		4989E4C129F1806C00F4A2B2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4989E4C029F1806C00F4A2B2 /* Preview Assets.xcassets */; };
+		4989E4D929F180B000F4A2B2 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989E4C829F180AF00F4A2B2 /* InfoView.swift */; };
+		4989E4DA29F180B000F4A2B2 /* ReelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989E4C929F180AF00F4A2B2 /* ReelView.swift */; };
+		4989E4DB29F180B000F4A2B2 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989E4CA29F180AF00F4A2B2 /* LogoView.swift */; };
+		4989E4DC29F180B000F4A2B2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989E4CB29F180AF00F4A2B2 /* MainView.swift */; };
+		4989E4DD29F180B000F4A2B2 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989E4CD29F180AF00F4A2B2 /* Modifiers.swift */; };
+		4989E4DE29F180B000F4A2B2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989E4CE29F180AF00F4A2B2 /* Extensions.swift */; };
+		4989E4DF29F180B000F4A2B2 /* PlaySound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989E4CF29F180AF00F4A2B2 /* PlaySound.swift */; };
+		4989E4E029F180B000F4A2B2 /* background-music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4989E4D129F180B000F4A2B2 /* background-music.mp3 */; };
+		4989E4E129F180B000F4A2B2 /* chimeup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4989E4D229F180B000F4A2B2 /* chimeup.mp3 */; };
+		4989E4E229F180B000F4A2B2 /* casino-chips.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4989E4D329F180B000F4A2B2 /* casino-chips.mp3 */; };
+		4989E4E329F180B000F4A2B2 /* spin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4989E4D429F180B000F4A2B2 /* spin.mp3 */; };
+		4989E4E429F180B000F4A2B2 /* win.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4989E4D529F180B000F4A2B2 /* win.mp3 */; };
+		4989E4E529F180B000F4A2B2 /* game-over.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4989E4D629F180B000F4A2B2 /* game-over.mp3 */; };
+		4989E4E629F180B000F4A2B2 /* high-score.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4989E4D729F180B000F4A2B2 /* high-score.mp3 */; };
+		4989E4E729F180B000F4A2B2 /* riseup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4989E4D829F180B000F4A2B2 /* riseup.mp3 */; };
+		49DD0B9029FAEA3F00BA4C65 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DD0B8F29FAEA3F00BA4C65 /* MainViewModel.swift */; };
+		49DD0B9229FD2D1F00BA4C65 /* TimerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DD0B9129FD2D1F00BA4C65 /* TimerUtils.swift */; };
+		49DD0B962A024E4800BA4C65 /* ReelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DD0B952A024E4800BA4C65 /* ReelState.swift */; };
+		49DD0B982A02860A00BA4C65 /* BetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DD0B972A02860A00BA4C65 /* BetType.swift */; };
+		49DD0B9A2A0295C800BA4C65 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DD0B992A0295C800BA4C65 /* Symbol.swift */; };
+		49DD0B9D2A029AB300BA4C65 /* BusinessConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DD0B9C2A029AB300BA4C65 /* BusinessConstants.swift */; };
+		49DD0B9F2A02A38800BA4C65 /* UserFeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DD0B9E2A02A38800BA4C65 /* UserFeedbackManager.swift */; };
+		49DD0BA12A02AC9500BA4C65 /* FeedbackEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DD0BA02A02AC9500BA4C65 /* FeedbackEvent.swift */; };
+		49DD0BA32A02D01300BA4C65 /* GameOverModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DD0BA22A02D01300BA4C65 /* GameOverModal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4989E4B629F1806900F4A2B2 /* Slot Machine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slot Machine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4989E4B929F1806900F4A2B2 /* Slot_MachineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slot_MachineApp.swift; sourceTree = "<group>"; };
-		4989E4BB29F1806900F4A2B2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4989E4BD29F1806C00F4A2B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4989E4C029F1806C00F4A2B2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4989E4C829F180AF00F4A2B2 /* InfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		4989E4C929F180AF00F4A2B2 /* ReelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReelView.swift; sourceTree = "<group>"; };
+		4989E4CA29F180AF00F4A2B2 /* LogoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		4989E4CB29F180AF00F4A2B2 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		4989E4CD29F180AF00F4A2B2 /* Modifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
+		4989E4CE29F180AF00F4A2B2 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		4989E4CF29F180AF00F4A2B2 /* PlaySound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySound.swift; sourceTree = "<group>"; };
+		4989E4D129F180B000F4A2B2 /* background-music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "background-music.mp3"; sourceTree = "<group>"; };
+		4989E4D229F180B000F4A2B2 /* chimeup.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chimeup.mp3; sourceTree = "<group>"; };
+		4989E4D329F180B000F4A2B2 /* casino-chips.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "casino-chips.mp3"; sourceTree = "<group>"; };
+		4989E4D429F180B000F4A2B2 /* spin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = spin.mp3; sourceTree = "<group>"; };
+		4989E4D529F180B000F4A2B2 /* win.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = win.mp3; sourceTree = "<group>"; };
+		4989E4D629F180B000F4A2B2 /* game-over.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "game-over.mp3"; sourceTree = "<group>"; };
+		4989E4D729F180B000F4A2B2 /* high-score.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "high-score.mp3"; sourceTree = "<group>"; };
+		4989E4D829F180B000F4A2B2 /* riseup.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = riseup.mp3; sourceTree = "<group>"; };
+		49DD0B8F29FAEA3F00BA4C65 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		49DD0B9129FD2D1F00BA4C65 /* TimerUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerUtils.swift; sourceTree = "<group>"; };
+		49DD0B952A024E4800BA4C65 /* ReelState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelState.swift; sourceTree = "<group>"; };
+		49DD0B972A02860A00BA4C65 /* BetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetType.swift; sourceTree = "<group>"; };
+		49DD0B992A0295C800BA4C65 /* Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
+		49DD0B9C2A029AB300BA4C65 /* BusinessConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessConstants.swift; sourceTree = "<group>"; };
+		49DD0B9E2A02A38800BA4C65 /* UserFeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFeedbackManager.swift; sourceTree = "<group>"; };
+		49DD0BA02A02AC9500BA4C65 /* FeedbackEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackEvent.swift; sourceTree = "<group>"; };
+		49DD0BA22A02D01300BA4C65 /* GameOverModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverModal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +97,12 @@
 		4989E4B829F1806900F4A2B2 /* Slot Machine */ = {
 			isa = PBXGroup;
 			children = (
+				4989E4CC29F180AF00F4A2B2 /* Utils */,
+				49DD0B942A024E3900BA4C65 /* Models */,
+				49DD0B9B2A029AA500BA4C65 /* Business */,
+				4989E4C729F180AF00F4A2B2 /* Scenes */,
+				4989E4D029F180B000F4A2B2 /* Sounds */,
 				4989E4B929F1806900F4A2B2 /* Slot_MachineApp.swift */,
-				4989E4BB29F1806900F4A2B2 /* ContentView.swift */,
 				4989E4BD29F1806C00F4A2B2 /* Assets.xcassets */,
 				4989E4BF29F1806C00F4A2B2 /* Preview Content */,
 			);
@@ -65,6 +115,73 @@
 				4989E4C029F1806C00F4A2B2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4989E4C729F180AF00F4A2B2 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				49DD0B8E29FAEA2600BA4C65 /* MainView */,
+				49DD0BA22A02D01300BA4C65 /* GameOverModal.swift */,
+				4989E4C829F180AF00F4A2B2 /* InfoView.swift */,
+				4989E4CA29F180AF00F4A2B2 /* LogoView.swift */,
+				4989E4C929F180AF00F4A2B2 /* ReelView.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		4989E4CC29F180AF00F4A2B2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4989E4CE29F180AF00F4A2B2 /* Extensions.swift */,
+				4989E4CD29F180AF00F4A2B2 /* Modifiers.swift */,
+				4989E4CF29F180AF00F4A2B2 /* PlaySound.swift */,
+				49DD0B9129FD2D1F00BA4C65 /* TimerUtils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		4989E4D029F180B000F4A2B2 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				4989E4D129F180B000F4A2B2 /* background-music.mp3 */,
+				4989E4D229F180B000F4A2B2 /* chimeup.mp3 */,
+				4989E4D329F180B000F4A2B2 /* casino-chips.mp3 */,
+				4989E4D429F180B000F4A2B2 /* spin.mp3 */,
+				4989E4D529F180B000F4A2B2 /* win.mp3 */,
+				4989E4D629F180B000F4A2B2 /* game-over.mp3 */,
+				4989E4D729F180B000F4A2B2 /* high-score.mp3 */,
+				4989E4D829F180B000F4A2B2 /* riseup.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		49DD0B8E29FAEA2600BA4C65 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				4989E4CB29F180AF00F4A2B2 /* MainView.swift */,
+				49DD0B8F29FAEA3F00BA4C65 /* MainViewModel.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		49DD0B942A024E3900BA4C65 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				49DD0B972A02860A00BA4C65 /* BetType.swift */,
+				49DD0B952A024E4800BA4C65 /* ReelState.swift */,
+				49DD0B992A0295C800BA4C65 /* Symbol.swift */,
+				49DD0BA02A02AC9500BA4C65 /* FeedbackEvent.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		49DD0B9B2A029AA500BA4C65 /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				49DD0B9C2A029AB300BA4C65 /* BusinessConstants.swift */,
+				49DD0B9E2A02A38800BA4C65 /* UserFeedbackManager.swift */,
+			);
+			path = Business;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,8 +242,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4989E4E129F180B000F4A2B2 /* chimeup.mp3 in Resources */,
 				4989E4C129F1806C00F4A2B2 /* Preview Assets.xcassets in Resources */,
+				4989E4E429F180B000F4A2B2 /* win.mp3 in Resources */,
+				4989E4E329F180B000F4A2B2 /* spin.mp3 in Resources */,
+				4989E4E029F180B000F4A2B2 /* background-music.mp3 in Resources */,
 				4989E4BE29F1806C00F4A2B2 /* Assets.xcassets in Resources */,
+				4989E4E529F180B000F4A2B2 /* game-over.mp3 in Resources */,
+				4989E4E229F180B000F4A2B2 /* casino-chips.mp3 in Resources */,
+				4989E4E729F180B000F4A2B2 /* riseup.mp3 in Resources */,
+				4989E4E629F180B000F4A2B2 /* high-score.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +262,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4989E4BC29F1806900F4A2B2 /* ContentView.swift in Sources */,
+				4989E4DB29F180B000F4A2B2 /* LogoView.swift in Sources */,
+				49DD0B982A02860A00BA4C65 /* BetType.swift in Sources */,
+				4989E4DF29F180B000F4A2B2 /* PlaySound.swift in Sources */,
+				4989E4DA29F180B000F4A2B2 /* ReelView.swift in Sources */,
+				49DD0B962A024E4800BA4C65 /* ReelState.swift in Sources */,
+				49DD0BA32A02D01300BA4C65 /* GameOverModal.swift in Sources */,
+				49DD0BA12A02AC9500BA4C65 /* FeedbackEvent.swift in Sources */,
+				49DD0B9A2A0295C800BA4C65 /* Symbol.swift in Sources */,
+				4989E4DD29F180B000F4A2B2 /* Modifiers.swift in Sources */,
+				4989E4DE29F180B000F4A2B2 /* Extensions.swift in Sources */,
+				49DD0B9F2A02A38800BA4C65 /* UserFeedbackManager.swift in Sources */,
+				49DD0B9029FAEA3F00BA4C65 /* MainViewModel.swift in Sources */,
+				4989E4DC29F180B000F4A2B2 /* MainView.swift in Sources */,
+				4989E4D929F180B000F4A2B2 /* InfoView.swift in Sources */,
+				49DD0B9D2A029AB300BA4C65 /* BusinessConstants.swift in Sources */,
 				4989E4BA29F1806900F4A2B2 /* Slot_MachineApp.swift in Sources */,
+				49DD0B9229FD2D1F00BA4C65 /* TimerUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
