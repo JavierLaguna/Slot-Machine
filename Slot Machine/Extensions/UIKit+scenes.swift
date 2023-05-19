@@ -1,8 +1,14 @@
-//
-//  UIKit+scenes.swift
-//  Slot Machine
-//
-//  Created by Javier Laguna on 19/5/23.
-//
 
-import Foundation
+import UIKit
+
+var windowScene: UIWindowScene? {
+    UIApplication.shared.connectedScenes.first as? UIWindowScene
+}
+
+var firstWindow: UIWindow? {
+    windowScene?.windows.first
+}
+
+var deviceSafeAreaInsets: UIEdgeInsets? {
+    firstWindow?.safeAreaInsets
+}

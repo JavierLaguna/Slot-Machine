@@ -18,6 +18,8 @@ struct InfoView: View {
         }
     }
     
+    private let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "Unknown"
+    
     private let symbols: [Symbol]
     
     init(symbols: [Symbol]) {
@@ -113,13 +115,12 @@ struct InfoView: View {
                 
                 Section(header: Text("About the application")) {
                     FormRowView(firstItem: "Application", secondItem: "Slot Machine")
-                    FormRowView(firstItem: "Platforms", secondItem: "iPhone, iPad, Mac") // TODO: JLI
+                    FormRowView(firstItem: "Platforms", secondItem: "iPhone, iPad, Mac")
                     FormRowView(firstItem: "Developer", secondItem: "Javier Laguna")
                     FormRowView(firstItem: "Designer", secondItem: "Robert Petras")
                     FormRowView(firstItem: "Music", secondItem: "Dan Lebowitz")
-                    FormRowView(firstItem: "Website", secondItem: "https://credo.academy")
                     FormRowView(firstItem: "Copyright", secondItem: "© All rights reserved.")
-                    FormRowView(firstItem: "Version", secondItem: "1.0.0")
+                    FormRowView(firstItem: "Version", secondItem: appVersion)
                 }
             }
             .font(.system(.body, design: .rounded))

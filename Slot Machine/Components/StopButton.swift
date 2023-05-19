@@ -17,7 +17,7 @@ struct StopButton: View {
                 .modifier(ImageModifier())
                 .overlay {
                     Text("STOP")
-                        .font(.system(size: 38, weight: .bold, design: .rounded))
+                        .font(.system(size: 44, weight: .bold, design: .rounded))
                         .foregroundColor(Color("ColorYellow"))
                         .shadow(radius: 2, x: 2, y: 4)
                      

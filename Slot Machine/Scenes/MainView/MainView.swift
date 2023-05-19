@@ -153,6 +153,13 @@ struct MainView: View {
     
     var body: some View {
         ZStack {
+            LinearGradient(
+                gradient: Gradient(colors: [Color("ColorPink"), Color("ColorPurple")]),
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .edgesIgnoringSafeArea(.all)
+            
             VStack(spacing: 5) {
                 LogoView()
                 
@@ -177,14 +184,6 @@ struct MainView: View {
                 GameOverModal(onPressNewGameButton: viewModel.startNewGame)
             }
         }
-        .background(
-            LinearGradient(
-                gradient: Gradient(colors: [Color("ColorPink"), Color("ColorPurple")]),
-                startPoint: .top,
-                endPoint: .bottom
-            )
-            .edgesIgnoringSafeArea(.all)
-        )
         .sheet(isPresented: $showingInfoView) {
             InfoView(symbols: viewModel.symbols)
         }
