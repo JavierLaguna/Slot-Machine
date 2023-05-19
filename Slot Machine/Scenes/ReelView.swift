@@ -3,6 +3,9 @@ import SwiftUI
 
 struct ReelView: View {
     
+    @AppStorage(BusinessConstants.UserDefaults.gameMode)
+    private var gameMode: GameMode = BusinessConstants.DefaultValues.gameMode
+    
     private let animationShortDuration = 0.1
     private let animationDuration = 0.2
     private let positionVariation = 50.0
@@ -10,7 +13,7 @@ struct ReelView: View {
     
     private let symbols: [Symbol]
     private let reelState: ReelState
-    private let onEndSpin: (_ symbol: String) -> Void
+    private let onEndSpin: (_ symbol: Symbol) -> Void
     
     @State private var currentSymbols: [Symbol]
     @State private var rotations = 0
@@ -22,7 +25,7 @@ struct ReelView: View {
         currentSymbols[1]
     }
     
-    init(symbols: [Symbol], reelState: ReelState = .stop, onEndSpin: @escaping (_: String) -> Void) {
+    init(symbols: [Symbol], reelState: ReelState = .stop, onEndSpin: @escaping (_: Symbol) -> Void) {
         self.symbols = symbols
         self.reelState = reelState
         self.onEndSpin = onEndSpin
@@ -35,8 +38,11 @@ struct ReelView: View {
         case .spinning(let times):
             startSpinning(for: times)
             
+        case .spinningInfinite:
+            startSpinningInfinite()
+            
         case .stop:
-            break
+            stopSpinning()
         }
     }
     
@@ -47,8 +53,24 @@ struct ReelView: View {
         spin()
     }
     
+    private func startSpinningInfinite() {
+        rotations = 0
+        isSpinning = true
+        
+        spin()
+    }
+    
+    private func stopSpinning() {
+        withAnimation(.spring()) {
+            isSpinning = false
+        }
+        
+        rotations = 0
+    }
+    
     private func spin() {
-        guard rotations != 0,
+        guard isSpinning,
+              (gameMode == .manual || (gameMode == .auto && rotations != 0)),
               let lastSymbol = currentSymbols.last,
               let lastIndex = symbols.firstIndex(of: lastSymbol) else {
             
@@ -93,7 +115,10 @@ struct ReelView: View {
         time += animationDuration
         
         DispatchQueue.main.asyncAfter(deadline: .now() + time) {
-            rotations -= 1
+            if gameMode == .auto {
+                rotations -= 1
+            }
+
             spin()
         }
     }
@@ -106,7 +131,7 @@ struct ReelView: View {
             
             VStack {
                 ForEach(currentSymbols.indices, id: \.self) { index in
-                    Image(currentSymbols[index])
+                    Image(currentSymbols[index].icon)
                         .resizable()
                         .modifier(ImageModifier())
                         .frame(height: index == 1 ? .infinity : 0)
@@ -123,10 +148,8 @@ struct ReelView: View {
 struct ReelView_Previews: PreviewProvider {
     
     static var previews: some View {
-        ReelView(
-            symbols: ["gfx-bell", "gfx-cherry", "gfx-coin", "gfx-grape", "gfx-seven", "gfx-strawberry"]
-        ) { symbol in
-            
+        ReelView(symbols: Symbol.all) { symbol in
+            // Empty
         }
         .previewLayout(.sizeThatFits)
         .padding()

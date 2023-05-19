@@ -25,11 +25,7 @@ struct UserFeedbackManager {
 private extension UserFeedbackManager {
     
     func manage(sound: String) {
-        let soundDisabled = UserDefaults.standard.bool(forKey: BusinessConstants.UserDefaults.soundDisabled)
-        
-        if !soundDisabled {
-            playSound(sound: sound, type: "mp3")
-        }
+        SoundManager.shared.playSound(sound: sound)
     }
     
     func manage(haptic type: UINotificationFeedbackGenerator.FeedbackType) {

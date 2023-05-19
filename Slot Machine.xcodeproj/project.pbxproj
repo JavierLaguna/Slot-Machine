@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4967131A2A176267006D74C1 /* StopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496713192A176267006D74C1 /* StopButton.swift */; };
 		4989E4BA29F1806900F4A2B2 /* Slot_MachineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989E4B929F1806900F4A2B2 /* Slot_MachineApp.swift */; };
 		4989E4BE29F1806C00F4A2B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4989E4BD29F1806C00F4A2B2 /* Assets.xcassets */; };
 		4989E4C129F1806C00F4A2B2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4989E4C029F1806C00F4A2B2 /* Preview Assets.xcassets */; };
@@ -16,7 +17,6 @@
 		4989E4DC29F180B000F4A2B2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989E4CB29F180AF00F4A2B2 /* MainView.swift */; };
 		4989E4DD29F180B000F4A2B2 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989E4CD29F180AF00F4A2B2 /* Modifiers.swift */; };
 		4989E4DE29F180B000F4A2B2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989E4CE29F180AF00F4A2B2 /* Extensions.swift */; };
-		4989E4DF29F180B000F4A2B2 /* PlaySound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989E4CF29F180AF00F4A2B2 /* PlaySound.swift */; };
 		4989E4E029F180B000F4A2B2 /* background-music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4989E4D129F180B000F4A2B2 /* background-music.mp3 */; };
 		4989E4E129F180B000F4A2B2 /* chimeup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4989E4D229F180B000F4A2B2 /* chimeup.mp3 */; };
 		4989E4E229F180B000F4A2B2 /* casino-chips.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4989E4D329F180B000F4A2B2 /* casino-chips.mp3 */; };
@@ -34,9 +34,12 @@
 		49DD0B9F2A02A38800BA4C65 /* UserFeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DD0B9E2A02A38800BA4C65 /* UserFeedbackManager.swift */; };
 		49DD0BA12A02AC9500BA4C65 /* FeedbackEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DD0BA02A02AC9500BA4C65 /* FeedbackEvent.swift */; };
 		49DD0BA32A02D01300BA4C65 /* GameOverModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DD0BA22A02D01300BA4C65 /* GameOverModal.swift */; };
+		49E013252A1686500019C08C /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E013242A1686500019C08C /* GameMode.swift */; };
+		49F25DE42A164F18000095C3 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F25DE32A164F18000095C3 /* SoundManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		496713192A176267006D74C1 /* StopButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopButton.swift; sourceTree = "<group>"; };
 		4989E4B629F1806900F4A2B2 /* Slot Machine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slot Machine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4989E4B929F1806900F4A2B2 /* Slot_MachineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slot_MachineApp.swift; sourceTree = "<group>"; };
 		4989E4BD29F1806C00F4A2B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -47,7 +50,6 @@
 		4989E4CB29F180AF00F4A2B2 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		4989E4CD29F180AF00F4A2B2 /* Modifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		4989E4CE29F180AF00F4A2B2 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		4989E4CF29F180AF00F4A2B2 /* PlaySound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySound.swift; sourceTree = "<group>"; };
 		4989E4D129F180B000F4A2B2 /* background-music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "background-music.mp3"; sourceTree = "<group>"; };
 		4989E4D229F180B000F4A2B2 /* chimeup.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chimeup.mp3; sourceTree = "<group>"; };
 		4989E4D329F180B000F4A2B2 /* casino-chips.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "casino-chips.mp3"; sourceTree = "<group>"; };
@@ -65,6 +67,8 @@
 		49DD0B9E2A02A38800BA4C65 /* UserFeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFeedbackManager.swift; sourceTree = "<group>"; };
 		49DD0BA02A02AC9500BA4C65 /* FeedbackEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackEvent.swift; sourceTree = "<group>"; };
 		49DD0BA22A02D01300BA4C65 /* GameOverModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverModal.swift; sourceTree = "<group>"; };
+		49E013242A1686500019C08C /* GameMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
+		49F25DE32A164F18000095C3 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		496713182A17624E006D74C1 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				496713192A176267006D74C1 /* StopButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		4989E4AD29F1806900F4A2B2 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				4989E4CC29F180AF00F4A2B2 /* Utils */,
+				496713182A17624E006D74C1 /* Components */,
 				49DD0B942A024E3900BA4C65 /* Models */,
 				49DD0B9B2A029AA500BA4C65 /* Business */,
 				4989E4C729F180AF00F4A2B2 /* Scenes */,
@@ -134,7 +147,6 @@
 			children = (
 				4989E4CE29F180AF00F4A2B2 /* Extensions.swift */,
 				4989E4CD29F180AF00F4A2B2 /* Modifiers.swift */,
-				4989E4CF29F180AF00F4A2B2 /* PlaySound.swift */,
 				49DD0B9129FD2D1F00BA4C65 /* TimerUtils.swift */,
 			);
 			path = Utils;
@@ -168,9 +180,10 @@
 			isa = PBXGroup;
 			children = (
 				49DD0B972A02860A00BA4C65 /* BetType.swift */,
+				49DD0BA02A02AC9500BA4C65 /* FeedbackEvent.swift */,
+				49E013242A1686500019C08C /* GameMode.swift */,
 				49DD0B952A024E4800BA4C65 /* ReelState.swift */,
 				49DD0B992A0295C800BA4C65 /* Symbol.swift */,
-				49DD0BA02A02AC9500BA4C65 /* FeedbackEvent.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -179,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				49DD0B9C2A029AB300BA4C65 /* BusinessConstants.swift */,
+				49F25DE32A164F18000095C3 /* SoundManager.swift */,
 				49DD0B9E2A02A38800BA4C65 /* UserFeedbackManager.swift */,
 			);
 			path = Business;
@@ -264,11 +278,11 @@
 			files = (
 				4989E4DB29F180B000F4A2B2 /* LogoView.swift in Sources */,
 				49DD0B982A02860A00BA4C65 /* BetType.swift in Sources */,
-				4989E4DF29F180B000F4A2B2 /* PlaySound.swift in Sources */,
 				4989E4DA29F180B000F4A2B2 /* ReelView.swift in Sources */,
 				49DD0B962A024E4800BA4C65 /* ReelState.swift in Sources */,
 				49DD0BA32A02D01300BA4C65 /* GameOverModal.swift in Sources */,
 				49DD0BA12A02AC9500BA4C65 /* FeedbackEvent.swift in Sources */,
+				4967131A2A176267006D74C1 /* StopButton.swift in Sources */,
 				49DD0B9A2A0295C800BA4C65 /* Symbol.swift in Sources */,
 				4989E4DD29F180B000F4A2B2 /* Modifiers.swift in Sources */,
 				4989E4DE29F180B000F4A2B2 /* Extensions.swift in Sources */,
@@ -277,8 +291,10 @@
 				4989E4DC29F180B000F4A2B2 /* MainView.swift in Sources */,
 				4989E4D929F180B000F4A2B2 /* InfoView.swift in Sources */,
 				49DD0B9D2A029AB300BA4C65 /* BusinessConstants.swift in Sources */,
+				49E013252A1686500019C08C /* GameMode.swift in Sources */,
 				4989E4BA29F1806900F4A2B2 /* Slot_MachineApp.swift in Sources */,
 				49DD0B9229FD2D1F00BA4C65 /* TimerUtils.swift in Sources */,
+				49F25DE42A164F18000095C3 /* SoundManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

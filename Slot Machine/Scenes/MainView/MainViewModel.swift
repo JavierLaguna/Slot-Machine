@@ -1,21 +1,27 @@
 
 import Foundation
+import SwiftUI
 
 final class MainViewModel: ObservableObject {
+        
+    let symbols = Symbol.all
     
-    static private let initialCoins = 100
+    @AppStorage(BusinessConstants.UserDefaults.gameMode)
+    private var gameMode: GameMode = BusinessConstants.DefaultValues.gameMode
     
-    let symbols: [Symbol] = ["gfx-bell", "gfx-cherry", "gfx-coin", "gfx-grape", "gfx-seven", "gfx-strawberry"]
+    @AppStorage(BusinessConstants.UserDefaults.highScore)
+    var highscore: Int = BusinessConstants.DefaultValues.highScore
+    
+    @AppStorage(BusinessConstants.UserDefaults.coins)
+    var coins = BusinessConstants.DefaultValues.initialCoins
     
     @Published var reelsState: [ReelState] = [.stop, .stop, .stop]
-    @Published var highscore = UserDefaults.standard.integer(forKey: BusinessConstants.UserDefaults.highScore)
-    @Published var coins = MainViewModel.initialCoins
+    @Published var showGameOverModal = false
     @Published var bet: BetType = .small {
         didSet {
             onChangeBet()
         }
     }
-    @Published var showGameOverModal = false
     
     private var isSpinning = false
     private var selectedSymbols: [Symbol?] = [nil, nil, nil]
@@ -30,6 +36,14 @@ final class MainViewModel: ObservableObject {
     
     var canSpin: Bool {
         !isSpinning && canUseCurrentBet
+    }
+    
+    var showStopButton: Bool {
+        gameMode == .manual && isSpinning
+    }
+    
+    var spinButtonDisabled: Bool {
+        !canSpin
     }
     
     func startSpinReels() {
@@ -50,7 +64,7 @@ final class MainViewModel: ObservableObject {
             var times = 0
             for index in reelsState.indices {
                 times += getSpinTimes()
-                reelsState[index] = .spinning(times: times)
+                reelsState[index] = gameMode == .manual ? .spinningInfinite : .spinning(times: times)
                 
                 if reelsState[index] != reelsState.last {
                     await TimerUtils.waitTime(time: .seconds(0.3))
@@ -60,6 +74,10 @@ final class MainViewModel: ObservableObject {
     }
     
     func onFinishReelSpin(index: Int, symbol: Symbol) {
+        guard isSpinning else {
+            return
+        }
+        
         reelsState[index] = .stop
         selectedSymbols[index] = symbol
         
@@ -81,19 +99,35 @@ final class MainViewModel: ObservableObject {
     }
     
     func resetGame() {
-        UserDefaults.standard.set(0, forKey: BusinessConstants.UserDefaults.highScore)
-        highscore = 0
+        if isSpinning {
+            forceStop()
+        }
         
         startNewGame()
-        
         UserFeedbackManager.shared.on(.resetGame)
     }
     
     func startNewGame() {
-        coins = MainViewModel.initialCoins
+        coins = BusinessConstants.DefaultValues.initialCoins
         activateSmallBet()
         
         showGameOverModal = false
+    }
+    
+    func stopSpinReel() {
+        guard isSpinning, let firstSpinningIndex = reelsState.firstIndex(where: {
+            $0 == .spinningInfinite
+        }) else {
+            return
+        }
+        
+        reelsState[firstSpinningIndex] = .stop
+    }
+    
+    func onTapInfoButton() {
+        if isSpinning {
+            forceStop()
+        }
     }
 }
 
@@ -140,12 +174,15 @@ private extension MainViewModel {
     }
     
     func playerWins() {
-        coins += bet.rawValue * 10
+        guard let value = selectedSymbols.first??.value else {
+            return
+        }
+        
+        coins += bet.rawValue * value
     }
     
     func newHighScore() {
         highscore = coins
-        UserDefaults.standard.set(highscore, forKey: BusinessConstants.UserDefaults.highScore)
         
         UserFeedbackManager.shared.on(.newHighScore)
     }
@@ -163,5 +200,15 @@ private extension MainViewModel {
             showGameOverModal = true
             UserFeedbackManager.shared.on(.gameOver)
         }
+    }
+    
+    func forceStop() {
+        isSpinning = false
+        
+        reelsState = reelsState.map { _ in
+            .stop
+        }
+        
+        resetSymbols()
     }
 }

@@ -54,14 +54,14 @@ struct MainView: View {
             ReelView(
                 symbols: viewModel.symbols,
                 reelState: viewModel.reelsState[1],
-                onEndSpin: { viewModel.onFinishReelSpin(index: 1, symbol:$0) }
+                onEndSpin: { viewModel.onFinishReelSpin(index: 1, symbol: $0) }
             )
             
             HStack(spacing: 0) {
                 ReelView(
                     symbols: viewModel.symbols,
                     reelState: viewModel.reelsState[0],
-                    onEndSpin: { viewModel.onFinishReelSpin(index: 0, symbol:$0) }
+                    onEndSpin: { viewModel.onFinishReelSpin(index: 0, symbol: $0) }
                 )
                 
                 Spacer()
@@ -69,18 +69,12 @@ struct MainView: View {
                 ReelView(
                     symbols: viewModel.symbols,
                     reelState: viewModel.reelsState[2],
-                    onEndSpin: { viewModel.onFinishReelSpin(index: 2, symbol:$0) }
+                    onEndSpin: { viewModel.onFinishReelSpin(index: 2, symbol: $0) }
                 )
             }
             .frame(maxWidth: 500)
             
-            Button(action: onPressSpin) {
-                Image("gfx-spin")
-                    .renderingMode(.original)
-                    .resizable()
-                    .modifier(ImageModifier())
-            }
-            .disabled(!viewModel.canSpin)
+            MainButton
         }
     }
     
@@ -132,12 +126,29 @@ struct MainView: View {
     @ViewBuilder
     var InfoButton: some View {
         Button(action: {
-            self.showingInfoView = true
+            showingInfoView = true
+            viewModel.onTapInfoButton()
         }) {
             Image(systemName: "info.circle")
                 .foregroundColor(.white)
         }
         .modifier(ButtonModifier())
+    }
+    
+    @ViewBuilder
+    var MainButton: some View {
+        if viewModel.showStopButton {
+            StopButton(action: viewModel.stopSpinReel)
+            
+        } else {
+            Button(action: onPressSpin) {
+                Image("gfx-spin")
+                    .renderingMode(.original)
+                    .resizable()
+                    .modifier(ImageModifier())
+            }
+            .disabled(viewModel.spinButtonDisabled)
+        }
     }
     
     var body: some View {
@@ -175,7 +186,7 @@ struct MainView: View {
             .edgesIgnoringSafeArea(.all)
         )
         .sheet(isPresented: $showingInfoView) {
-            InfoView()
+            InfoView(symbols: viewModel.symbols)
         }
     }
 }
