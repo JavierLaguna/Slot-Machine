@@ -517,7 +517,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_ASSET_PATHS = "\"Slot Machine/Preview Content\"";
-				DEVELOPMENT_TEAM = F8FX9592B7;
+				DEVELOPMENT_TEAM = HDC4S2P5MK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Slot-Machine-Info.plist";
@@ -533,7 +533,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jlagunadev.wip.Slot-Machine";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jlagunadev.Slot-Machine";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
@@ -553,7 +553,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_ASSET_PATHS = "\"Slot Machine/Preview Content\"";
-				DEVELOPMENT_TEAM = F8FX9592B7;
+				DEVELOPMENT_TEAM = HDC4S2P5MK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Slot-Machine-Info.plist";
@@ -569,7 +569,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jlagunadev.wip.Slot-Machine";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jlagunadev.Slot-Machine";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
@@ -586,12 +586,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F8FX9592B7;
+				DEVELOPMENT_TEAM = HDC4S2P5MK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Slot MachineApp Stickers/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Slot Machine";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jlagunadev.wip.Slot-Machine.Slot-MachineApp-Stickers";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jlagunadev.Slot-Machine.Slot-MachineApp-Stickers";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -605,12 +605,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F8FX9592B7;
+				DEVELOPMENT_TEAM = HDC4S2P5MK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Slot MachineApp Stickers/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Slot Machine";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jlagunadev.wip.Slot-Machine.Slot-MachineApp-Stickers";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jlagunadev.Slot-Machine.Slot-MachineApp-Stickers";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
