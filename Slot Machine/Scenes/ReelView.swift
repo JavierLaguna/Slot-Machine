@@ -142,6 +142,7 @@ struct ReelView: View {
             }
         }
         .onChange(of: reelState, perform: onChange(reelState:))
+        .drawingGroup()
     }
 }
 

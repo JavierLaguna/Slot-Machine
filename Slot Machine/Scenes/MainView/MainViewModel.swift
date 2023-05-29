@@ -46,6 +46,10 @@ final class MainViewModel: ObservableObject {
         !canSpin
     }
     
+    func onAppearView() {
+        checkIsGameOver()
+    }
+    
     func startSpinReels() {
         guard canSpin else {
             if !canBet {
@@ -87,13 +91,13 @@ final class MainViewModel: ObservableObject {
     }
     
     func activateSmallBet() {
-        if bet != .small {
+        if bet != .small, coins >= BetType.small.rawValue {
             bet = .small
         }
     }
     
     func activateBigBet() {
-        if bet != .big {
+        if bet != .big, coins >= BetType.big.rawValue {
             bet = .big
         }
     }
@@ -122,6 +126,7 @@ final class MainViewModel: ObservableObject {
         }
         
         reelsState[firstSpinningIndex] = .stop
+        UserFeedbackManager.shared.on(.pressStopButton)
     }
     
     func onTapInfoButton() {
@@ -188,7 +193,7 @@ private extension MainViewModel {
     }
     
     func playerLoses() {
-        coins -= bet.rawValue
+        coins = max(coins - bet.rawValue, 0)
         
         if coins < bet.rawValue {
             activateSmallBet()

@@ -187,6 +187,9 @@ struct MainView: View {
         .sheet(isPresented: $showingInfoView) {
             InfoView(symbols: viewModel.symbols)
         }
+        .onAppear {
+            viewModel.onAppearView()
+        }
     }
 }
 
