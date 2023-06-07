@@ -6,6 +6,7 @@ struct MainView: View {
     @ObservedObject private var viewModel = MainViewModel()
     
     @State private var showingInfoView: Bool = false
+    @State private var loadingText = "."
     
     var isActiveSmallBet: Bool {
         viewModel.bet == .small
@@ -16,6 +17,20 @@ struct MainView: View {
     
     private func onPressSpin() {
         viewModel.startSpinReels()
+    }
+    
+    private func onTapBonusButton() {
+        loadingText = "."
+        viewModel.onTapBonusButton()
+    }
+    
+    private func animateLoadingText() async {
+        while viewModel.isSpinningBonusTry {
+            await TimerUtils.waitTime(time: .seconds(0.5))
+            loadingText = "\(loadingText)."
+            
+            await animateLoadingText()
+        }
     }
     
     @ViewBuilder
@@ -136,9 +151,27 @@ struct MainView: View {
     }
     
     @ViewBuilder
+    var LoadingButton: some View {
+        ReelButton(loadingText, action: {})
+            .disabled(viewModel.isSpinningBonusTry)
+            .animation(Animation.default, value: loadingText)
+            .task {
+                await animateLoadingText()
+            }
+    }
+    
+    @ViewBuilder
     var MainButton: some View {
-        if viewModel.showStopButton {
-            StopButton(action: viewModel.stopSpinReel)
+        if viewModel.showBonusButton {
+            
+            if viewModel.spinButtonDisabled {
+                LoadingButton
+            } else {
+                ReelButton("bonus", action: onTapBonusButton)
+            }
+            
+        } else if viewModel.showStopButton {
+            ReelButton("stop", action: viewModel.stopSpinReel)
             
         } else {
             Button(action: onPressSpin) {

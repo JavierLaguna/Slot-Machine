@@ -3,7 +3,7 @@ import Foundation
 import SwiftUI
 
 final class MainViewModel: ObservableObject {
-        
+    
     let symbols = Symbol.all
     
     @AppStorage(BusinessConstants.UserDefaults.gameMode)
@@ -15,8 +15,9 @@ final class MainViewModel: ObservableObject {
     @AppStorage(BusinessConstants.UserDefaults.coins)
     var coins = BusinessConstants.DefaultValues.initialCoins
     
-    @Published var reelsState: [ReelState] = [.stop, .stop, .stop]
+    @Published var reelsState: [ReelState] = [.stop, .stop, .stop] // TODO: Publishing changes from background threads is not allowed; make sure to publish values from the main thread (via operators like receive(on:)) on model updates.
     @Published var showGameOverModal = false
+    @Published var showBonusButton = false
     @Published var bet: BetType = .small {
         didSet {
             onChangeBet()
@@ -25,6 +26,14 @@ final class MainViewModel: ObservableObject {
     
     private var isSpinning = false
     private var selectedSymbols: [Symbol?] = [nil, nil, nil]
+    
+    private var hadTwoEqualSymbols: Bool {
+        guard !selectedSymbols.contains(where: { $0 == nil }) else {
+            return false
+        }
+        
+        return Set(selectedSymbols).count == 2
+    }
     
     var canBet: Bool {
         coins >= BetType.small.rawValue
@@ -44,6 +53,10 @@ final class MainViewModel: ObservableObject {
     
     var spinButtonDisabled: Bool {
         !canSpin
+    }
+    
+    var isSpinningBonusTry: Bool {
+        showBonusButton && isSpinning
     }
     
     func onAppearView() {
@@ -134,6 +147,22 @@ final class MainViewModel: ObservableObject {
             forceStop()
         }
     }
+    
+    func onTapBonusButton() {
+        var diffSymbolIndex: Int?
+        for (index, value) in selectedSymbols.enumerated() {
+            if selectedSymbols.filter({ $0 == value }).count == 1 {
+                diffSymbolIndex = index
+                break
+            }
+        }
+        
+        if let diffSymbolIndex {
+            selectedSymbols[diffSymbolIndex] = nil
+            isSpinning = true
+            reelsState[diffSymbolIndex] = .spinning(times: getSpinTimes())
+        }
+    }
 }
 
 private extension MainViewModel {
@@ -159,8 +188,17 @@ private extension MainViewModel {
         }
         
         isSpinning = false
-        checkWinning()
-        checkIsGameOver()
+        
+        if showBonusButton {
+            showBonusButton = false
+            
+        } else if gameMode == .manual, hadTwoEqualSymbols {
+            showBonusButton = true
+            
+        } else {
+            checkWinning()
+            checkIsGameOver()
+        }
     }
     
     func checkWinning() {
@@ -211,7 +249,7 @@ private extension MainViewModel {
         isSpinning = false
         
         reelsState = reelsState.map { _ in
-            .stop
+                .stop
         }
         
         resetSymbols()

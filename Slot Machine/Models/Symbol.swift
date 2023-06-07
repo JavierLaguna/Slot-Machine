@@ -1,7 +1,7 @@
 
 import Foundation
 
-struct Symbol: Identifiable, Equatable {
+struct Symbol: Identifiable, Equatable, Hashable {
     let id = UUID()
     let icon: String
     let value: Int

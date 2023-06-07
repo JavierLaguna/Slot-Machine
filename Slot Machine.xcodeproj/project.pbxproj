@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4967131A2A176267006D74C1 /* StopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496713192A176267006D74C1 /* StopButton.swift */; };
+		4967131A2A176267006D74C1 /* ReelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496713192A176267006D74C1 /* ReelButton.swift */; };
 		4989E4BA29F1806900F4A2B2 /* Slot_MachineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4989E4B929F1806900F4A2B2 /* Slot_MachineApp.swift */; };
 		4989E4BE29F1806C00F4A2B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4989E4BD29F1806C00F4A2B2 /* Assets.xcassets */; };
 		4989E4C129F1806C00F4A2B2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4989E4C029F1806C00F4A2B2 /* Preview Assets.xcassets */; };
@@ -67,7 +67,7 @@
 
 /* Begin PBXFileReference section */
 		493F95752A17921A00F1B204 /* Slot-Machine-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Slot-Machine-Info.plist"; sourceTree = SOURCE_ROOT; };
-		496713192A176267006D74C1 /* StopButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopButton.swift; sourceTree = "<group>"; };
+		496713192A176267006D74C1 /* ReelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelButton.swift; sourceTree = "<group>"; };
 		4989E4B629F1806900F4A2B2 /* Slot Machine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slot Machine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4989E4B929F1806900F4A2B2 /* Slot_MachineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slot_MachineApp.swift; sourceTree = "<group>"; };
 		4989E4BD29F1806C00F4A2B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 		496713182A17624E006D74C1 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				496713192A176267006D74C1 /* StopButton.swift */,
+				496713192A176267006D74C1 /* ReelButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -367,7 +367,7 @@
 				49DD0B962A024E4800BA4C65 /* ReelState.swift in Sources */,
 				49DD0BA32A02D01300BA4C65 /* GameOverModal.swift in Sources */,
 				49DD0BA12A02AC9500BA4C65 /* FeedbackEvent.swift in Sources */,
-				4967131A2A176267006D74C1 /* StopButton.swift in Sources */,
+				4967131A2A176267006D74C1 /* ReelButton.swift in Sources */,
 				49DD0B9A2A0295C800BA4C65 /* Symbol.swift in Sources */,
 				4989E4DD29F180B000F4A2B2 /* Modifiers.swift in Sources */,
 				4989E4DE29F180B000F4A2B2 /* Text+extension.swift in Sources */,

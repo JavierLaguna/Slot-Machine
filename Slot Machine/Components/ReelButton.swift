@@ -1,11 +1,13 @@
 
 import SwiftUI
 
-struct StopButton: View {
+struct ReelButton: View {
     
+    private let text: String
     private let action: () -> Void
     
-    init(action: @escaping () -> Void) {
+    init(_ text: String, action: @escaping () -> Void) {
+        self.text = text
         self.action = action
     }
     
@@ -16,7 +18,7 @@ struct StopButton: View {
                 .resizable()
                 .modifier(ImageModifier())
                 .overlay {
-                    Text("STOP")
+                    Text(text.uppercased())
                         .font(.system(size: 44, weight: .bold, design: .rounded))
                         .foregroundColor(Color("ColorYellow"))
                         .shadow(radius: 2, x: 2, y: 4)
@@ -26,16 +28,16 @@ struct StopButton: View {
     }
 }
 
-struct StopButton_Previews: PreviewProvider {
+struct ReelButton_Previews: PreviewProvider {
     
     static var previews: some View {
         Group {
-            StopButton() {
+            ReelButton("stop") {
                 
             }
             
             HStack {
-                StopButton() {
+                ReelButton("stop") {
                     
                 }
                     
