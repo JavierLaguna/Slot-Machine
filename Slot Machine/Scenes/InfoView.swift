@@ -18,6 +18,9 @@ struct InfoView: View {
         }
     }
     
+    @AppStorage(BusinessConstants.UserDefaults.vibrationDisabled)
+    private var vibrationDisabled: Bool = BusinessConstants.DefaultValues.vibrationDisabled
+    
     private let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "Unknown"
     
     private let symbols: [Symbol]
@@ -79,6 +82,33 @@ struct InfoView: View {
     }
     
     @ViewBuilder
+    var VibratePreference: some View {
+        HStack {
+            Toggle(isOn: Binding(
+                get: { !vibrationDisabled },
+                set: { vibrationDisabled = !$0 }
+            )) {
+                HStack {
+                    Text("Vibration")
+                        .foregroundColor(Color.gray)
+                    
+                    Spacer()
+                    
+                    Image(systemName: "water.waves.slash")
+                        .resizable()
+                        .frame(width: 16, height: 16)
+                        .foregroundColor(Color.gray)
+                }
+            }
+            
+            Image(systemName: "water.waves")
+                .resizable()
+                .frame(width: 16, height: 16)
+                .foregroundColor(Color.gray)
+        }
+    }
+    
+    @ViewBuilder
     var HighScorePreference: some View {
         HStack {
             Text("High Score \(highscore)")
@@ -103,6 +133,8 @@ struct InfoView: View {
                     GameModePreference
                     
                     SoundPreference
+                    
+                    VibratePreference
                     
                     HighScorePreference
                 }

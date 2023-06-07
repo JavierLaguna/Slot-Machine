@@ -29,6 +29,10 @@ private extension UserFeedbackManager {
     }
     
     func manage(haptic type: UINotificationFeedbackGenerator.FeedbackType) {
-        haptics.notificationOccurred(type)
+        let vibrationDisabled = UserDefaults.standard.bool(forKey: BusinessConstants.UserDefaults.vibrationDisabled)
+        
+        if !vibrationDisabled {
+            haptics.notificationOccurred(type)
+        }
     }
 }
